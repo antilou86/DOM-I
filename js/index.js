@@ -41,12 +41,58 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+// loops through nav elements and sets inner text to whatever text is found within corresponding JSON file data
 let navi = document.querySelectorAll('nav a');
-
-for (let i=0; i <= navi.length; i++) {
+for (let i=0; i < navi.length; i++) {
   navi[i].textContent = siteContent.nav[`nav-item-${i+1}`]; 
 }
 
+let ctaDiv = document.querySelectorAll('.cta .cta-text')[0];
+let ctaImg = document.querySelector('#cta-img');
+
+ctaDiv.getElementsByTagName('h1')[0].innerHTML = siteContent['cta']['h1'];
+ctaDiv.getElementsByTagName('button')[0].innerHTML = siteContent['cta']['button'];
+ctaImg.src = siteContent['cta']["img-src"];
+
+let topContent = document.getElementsByClassName('text-content')[0];
+topContent.getElementsByTagName('h4')[0].innerHTML = siteContent["main-content"]['features-h4'];
+topContent.getElementsByTagName('p')[0].innerHTML = siteContent["main-content"]['features-content'];
+
+let textContent =document.getElementsByClassName('text-content')[1];
+
+textContent.getElementsByTagName('h4')[0].innerHTML = siteContent["main-content"]['about-h4'];
+textContent.getElementsByTagName('p')[0].innerHTML = siteContent["main-content"]['about-content'];
+
+let middleImg = document.querySelector('.middle-img');
+middleImg.src = siteContent['main-content']["middle-img-src"];
+
+
+let bottomContent = document.querySelectorAll('.bottom-content')[0].getElementsByClassName('text-content');
+
+bottomContent[0].getElementsByTagName('h4')[0].innerHTML = siteContent['main-content']['services-h4'];
+bottomContent[0].getElementsByTagName('p')[0].innerHTML = siteContent['main-content']['services-content'];
+
+// bottomContent[0].children[0].h4.textContent = siteContent['main-content']['services-h4'];
+// bottomContent[0].children[0].p.textContent = siteContent['main-content']['services-content'];
+// bottomContent[0].children[1].h4.textContent = siteContent['main-content']['product-h4'];
+// bottomContent[0].children[1].p.textContent = siteContent['main-content']['product-content'];
+// bottomContent[0].children[2].h4.textContent = siteContent['main-content']['vision-h4'];
+// bottomContent[0].children[2].p.textContent = siteContent['main-content']['vision-content'];
 
 
 
+// let contact = document.querySelector('.contact');
+
+// contact.h4 = siteContent.contact['contact-h4'];
+
+// for (let i=1; i < siteContent.contact.length; i++){
+//   contact.children[i] = siteContent.contact[i];
+// }
+// console.log(contact.children[1])
+
+// "contact": {
+//   "contact-h4" : "Contact",
+//   "address" : "123 Way 456 Street Somewhere, USA",
+//   "phone" : "1 (888) 888-8888",
+//   "email" : "sales@greatidea.io",
+// },
