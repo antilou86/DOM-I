@@ -46,6 +46,10 @@ let navi = document.querySelectorAll('nav a');
 for (let i=0; i < navi.length; i++) {
   navi[i].textContent = siteContent.nav[`nav-item-${i+1}`]; 
 }
+//loops over nav and sets font to green
+for (let i=0; i <navi.length; i++) {
+  navi[i].style.color = 'green';
+}
 
 let ctaDiv = document.querySelectorAll('.cta .cta-text')[0];
 let ctaImg = document.querySelector('#cta-img');
@@ -76,9 +80,12 @@ bottomContent[2].getElementsByTagName('h4')[0].innerHTML = siteContent['main-con
 bottomContent[2].getElementsByTagName('p')[0].innerHTML = siteContent['main-content']['vision-content'];
 
 
-
 let contact = document.getElementsByClassName('contact')[0];
 contact.getElementsByTagName('h4')[0].innerHTML = siteContent.contact['contact-h4'];
 contact.getElementsByTagName('p')[0].innerHTML = siteContent.contact['address'];
 contact.getElementsByTagName('p')[1].innerHTML = siteContent.contact['phone'];
 contact.getElementsByTagName('p')[2].innerHTML = siteContent.contact['email'];
+
+let newNav = document.getElementsByTagName('nav')[0];
+console.log(newNav);
+
