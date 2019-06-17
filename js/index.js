@@ -59,18 +59,17 @@ topContent.getElementsByTagName('h4')[0].innerHTML = siteContent["main-content"]
 topContent.getElementsByTagName('p')[0].innerHTML = siteContent["main-content"]['features-content'];
 
 let textContent =document.getElementsByClassName('text-content')[1];
-
 textContent.getElementsByTagName('h4')[0].innerHTML = siteContent["main-content"]['about-h4'];
 textContent.getElementsByTagName('p')[0].innerHTML = siteContent["main-content"]['about-content'];
 
 let middleImg = document.querySelector('.middle-img');
 middleImg.src = siteContent['main-content']["middle-img-src"];
 
-
 let bottomContent = document.querySelectorAll('.bottom-content')[0].getElementsByClassName('text-content');
-
 bottomContent[0].getElementsByTagName('h4')[0].innerHTML = siteContent['main-content']['services-h4'];
 bottomContent[0].getElementsByTagName('p')[0].innerHTML = siteContent['main-content']['services-content'];
+
+
 
 // bottomContent[0].children[0].h4.textContent = siteContent['main-content']['services-h4'];
 // bottomContent[0].children[0].p.textContent = siteContent['main-content']['services-content'];
