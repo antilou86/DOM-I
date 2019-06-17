@@ -69,14 +69,11 @@ let bottomContent = document.querySelectorAll('.bottom-content')[0].getElementsB
 bottomContent[0].getElementsByTagName('h4')[0].innerHTML = siteContent['main-content']['services-h4'];
 bottomContent[0].getElementsByTagName('p')[0].innerHTML = siteContent['main-content']['services-content'];
 
+bottomContent[1].getElementsByTagName('h4')[0].innerHTML = siteContent['main-content']['product-h4'];
+bottomContent[1].getElementsByTagName('p')[0].innerHTML = siteContent['main-content']['product-content'];
 
-
-// bottomContent[0].children[0].h4.textContent = siteContent['main-content']['services-h4'];
-// bottomContent[0].children[0].p.textContent = siteContent['main-content']['services-content'];
-// bottomContent[0].children[1].h4.textContent = siteContent['main-content']['product-h4'];
-// bottomContent[0].children[1].p.textContent = siteContent['main-content']['product-content'];
-// bottomContent[0].children[2].h4.textContent = siteContent['main-content']['vision-h4'];
-// bottomContent[0].children[2].p.textContent = siteContent['main-content']['vision-content'];
+bottomContent[2].getElementsByTagName('h4')[0].innerHTML = siteContent['main-content']['vision-h4'];
+bottomContent[2].getElementsByTagName('p')[0].innerHTML = siteContent['main-content']['vision-content'];
 
 
 
