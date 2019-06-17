@@ -77,18 +77,8 @@ bottomContent[2].getElementsByTagName('p')[0].innerHTML = siteContent['main-cont
 
 
 
-// let contact = document.querySelector('.contact');
-
-// contact.h4 = siteContent.contact['contact-h4'];
-
-// for (let i=1; i < siteContent.contact.length; i++){
-//   contact.children[i] = siteContent.contact[i];
-// }
-// console.log(contact.children[1])
-
-// "contact": {
-//   "contact-h4" : "Contact",
-//   "address" : "123 Way 456 Street Somewhere, USA",
-//   "phone" : "1 (888) 888-8888",
-//   "email" : "sales@greatidea.io",
-// },
+let contact = document.getElementsByClassName('contact')[0];
+contact.getElementsByTagName('h4')[0].innerHTML = siteContent.contact['contact-h4'];
+contact.getElementsByTagName('p')[0].innerHTML = siteContent.contact['address'];
+contact.getElementsByTagName('p')[1].innerHTML = siteContent.contact['phone'];
+contact.getElementsByTagName('p')[2].innerHTML = siteContent.contact['email'];
