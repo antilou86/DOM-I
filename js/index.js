@@ -46,10 +46,7 @@ let navi = document.querySelectorAll('nav a');
 for (let i=0; i < navi.length; i++) {
   navi[i].textContent = siteContent.nav[`nav-item-${i+1}`]; 
 }
-//loops over nav and sets font to green
-for (let i=0; i <navi.length; i++) {
-  navi[i].style.color = 'green';
-}
+
 
 let ctaDiv = document.querySelectorAll('.cta .cta-text')[0];
 let ctaImg = document.querySelector('#cta-img');
@@ -57,6 +54,11 @@ let ctaImg = document.querySelector('#cta-img');
 ctaDiv.getElementsByTagName('h1')[0].innerHTML = siteContent['cta']['h1'];
 ctaDiv.getElementsByTagName('button')[0].innerHTML = siteContent['cta']['button'];
 ctaImg.src = siteContent['cta']["img-src"];
+
+let thisH1 = ctaDiv.getElementsByTagName('h1')[0];
+console.log(thisH1);
+thisH1.innerHTML= thisH1.innerHTML.split(' ').join('<br />');
+console.log(thisH1);
 
 let topContent = document.getElementsByClassName('text-content')[0];
 topContent.getElementsByTagName('h4')[0].innerHTML = siteContent["main-content"]['features-h4'];
@@ -88,4 +90,24 @@ contact.getElementsByTagName('p')[2].innerHTML = siteContent.contact['email'];
 
 let newNav = document.getElementsByTagName('nav')[0];
 console.log(newNav);
+
+const newEl = document.createElement('a');
+const newEl2 = document.createElement('a');
+newNav.appendChild(newEl);
+
+//.setAttribute('href', '#');
+//.textContent('something');
+
+newNav.prepend(newEl2);
+newNav.getElementsByTagName('a')[0].setAttribute('href', '#');
+newNav.getElementsByTagName('a')[newNav.getElementsByTagName('a').length -1].setAttribute('href', '#');
+newNav.getElementsByTagName('a')[0].innerHTML = 'SING IT';
+newNav.getElementsByTagName('a')[newNav.getElementsByTagName('a').length -1].innerHTML = 'OUT LOUD'
+newNav.getElementsByTagName('a')[0].style.color = 'green';
+newNav.getElementsByTagName('a')[newNav.getElementsByTagName('a').length -1].style.color = 'green';
+
+//loops over nav and sets font to green
+for (let i=0; i <navi.length; i++) {
+  navi[i].style.color = 'green';
+}
 
