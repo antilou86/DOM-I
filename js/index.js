@@ -40,3 +40,74 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// loops through nav elements and sets inner text to whatever text is found within corresponding JSON file data
+let navi = document.querySelectorAll('nav a');
+for (let i=0; i < navi.length; i++) {
+  navi[i].textContent = siteContent.nav[`nav-item-${i+1}`]; 
+}
+
+
+let ctaDiv = document.querySelectorAll('.cta .cta-text')[0];
+let ctaImg = document.querySelector('#cta-img');
+
+ctaDiv.getElementsByTagName('h1')[0].innerHTML = siteContent['cta']['h1'];
+ctaDiv.getElementsByTagName('button')[0].innerHTML = siteContent['cta']['button'];
+ctaImg.src = siteContent['cta']["img-src"];
+
+let thisH1 = ctaDiv.getElementsByTagName('h1')[0];
+console.log(thisH1);
+thisH1.innerHTML= thisH1.innerHTML.split(' ').join('<br />');
+console.log(thisH1);
+
+let topContent = document.getElementsByClassName('text-content')[0];
+topContent.getElementsByTagName('h4')[0].innerHTML = siteContent["main-content"]['features-h4'];
+topContent.getElementsByTagName('p')[0].innerHTML = siteContent["main-content"]['features-content'];
+
+let textContent =document.getElementsByClassName('text-content')[1];
+textContent.getElementsByTagName('h4')[0].innerHTML = siteContent["main-content"]['about-h4'];
+textContent.getElementsByTagName('p')[0].innerHTML = siteContent["main-content"]['about-content'];
+
+let middleImg = document.querySelector('.middle-img');
+middleImg.src = siteContent['main-content']["middle-img-src"];
+
+let bottomContent = document.querySelectorAll('.bottom-content')[0].getElementsByClassName('text-content');
+bottomContent[0].getElementsByTagName('h4')[0].innerHTML = siteContent['main-content']['services-h4'];
+bottomContent[0].getElementsByTagName('p')[0].innerHTML = siteContent['main-content']['services-content'];
+
+bottomContent[1].getElementsByTagName('h4')[0].innerHTML = siteContent['main-content']['product-h4'];
+bottomContent[1].getElementsByTagName('p')[0].innerHTML = siteContent['main-content']['product-content'];
+
+bottomContent[2].getElementsByTagName('h4')[0].innerHTML = siteContent['main-content']['vision-h4'];
+bottomContent[2].getElementsByTagName('p')[0].innerHTML = siteContent['main-content']['vision-content'];
+
+
+let contact = document.getElementsByClassName('contact')[0];
+contact.getElementsByTagName('h4')[0].innerHTML = siteContent.contact['contact-h4'];
+contact.getElementsByTagName('p')[0].innerHTML = siteContent.contact['address'];
+contact.getElementsByTagName('p')[1].innerHTML = siteContent.contact['phone'];
+contact.getElementsByTagName('p')[2].innerHTML = siteContent.contact['email'];
+
+let newNav = document.getElementsByTagName('nav')[0];
+console.log(newNav);
+
+const newEl = document.createElement('a');
+const newEl2 = document.createElement('a');
+newNav.appendChild(newEl);
+
+//.setAttribute('href', '#');
+//.textContent('something');
+
+newNav.prepend(newEl2);
+newNav.getElementsByTagName('a')[0].setAttribute('href', '#');
+newNav.getElementsByTagName('a')[newNav.getElementsByTagName('a').length -1].setAttribute('href', '#');
+newNav.getElementsByTagName('a')[0].innerHTML = 'SING IT';
+newNav.getElementsByTagName('a')[newNav.getElementsByTagName('a').length -1].innerHTML = 'OUT LOUD'
+newNav.getElementsByTagName('a')[0].style.color = 'green';
+newNav.getElementsByTagName('a')[newNav.getElementsByTagName('a').length -1].style.color = 'green';
+
+//loops over nav and sets font to green
+for (let i=0; i <navi.length; i++) {
+  navi[i].style.color = 'green';
+}
+
